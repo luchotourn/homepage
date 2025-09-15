@@ -15,43 +15,34 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
   }
 
   return (
-    <div className="max-w-2xl mx-auto px-6 py-16">
-      <header className="mb-16">
-        <div className="mb-6">
-          <Link href="/blog" className="text-gray-600 hover:text-black transition-colors text-sm">
-            ← Blog
-          </Link>
-        </div>
-        <h1 className="text-2xl font-medium mb-4">{post.title}</h1>
-        <div className="flex items-center space-x-4 text-sm text-gray-600">
-          <time>{post.date}</time>
-          {post.tags && post.tags.length > 0 && (
-            <div className="flex space-x-2">
-              {post.tags.map((tag) => (
-                <span
-                  key={tag}
-                  className="bg-gray-100 px-2 py-1 rounded text-xs"
-                >
-                  {tag}
-                </span>
-              ))}
-            </div>
-          )}
-        </div>
-      </header>
+    <div className="max-w-5xl mx-auto px-6 sm:px-20 py-20">
+      <div className="mb-6">
+        <Link href="/" className="text-black opacity-70 hover:opacity-100 leading-relaxed">
+          ← Home
+        </Link>
+      </div>
 
-      <article className="prose prose-gray max-w-none">
+      <div className="mb-8">
+        <div className="text-black opacity-70 leading-relaxed">
+          <strong>{post.title}</strong>
+        </div>
+        <div className="text-black opacity-30 leading-relaxed">
+          {post.date}
+        </div>
+      </div>
+
+      <article className="prose max-w-none">
         <div dangerouslySetInnerHTML={{ __html: post.content || '' }} />
       </article>
 
-      <footer className="mt-16 pt-8 border-t border-gray-200">
+      <div className="mt-16">
         <Link
-          href="/blog"
-          className="text-gray-600 hover:text-black transition-colors text-sm"
+          href="/"
+          className="text-black opacity-70 hover:opacity-100 leading-relaxed"
         >
-          ← Back to blog
+          ← Back to home
         </Link>
-      </footer>
+      </div>
     </div>
   );
 }

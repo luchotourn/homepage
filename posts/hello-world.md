@@ -1,38 +1,38 @@
 ---
-title: "Hello World"
+title: "Hola Mundo"
 date: "2024-01-15"
-excerpt: "Welcome to my new homepage. Here's why I built it and what you can expect to find here."
-tags: ["meta", "introduction"]
+excerpt: "Bienvenido a mi nueva página personal. Te explico por qué la construí y qué puedes esperar encontrar aquí."
+tags: ["meta", "introducción"]
 ---
 
-# Hello World
+# Hola Mundo
 
-Welcome to my personal homepage! After years of having my thoughts scattered across various platforms, I decided it was time to create a central place for my writing and projects.
+¡Bienvenido a mi página personal! Después de años de tener mis pensamientos dispersos en varias plataformas, decidí que era hora de crear un lugar central para mis escritos y proyectos.
 
-## Why I Built This
+## Por Qué Construí Esto
 
-I wanted a simple, clean space where I could:
+Quería un espacio simple y limpio donde pudiera:
 
-- Share my thoughts on programming and technology
-- Document my learning journey
-- Connect with other developers and creators
-- Have full control over my content
+- Compartir mis pensamientos sobre programación y tecnología
+- Documentar mi viaje de aprendizaje
+- Conectar con otros desarrolladores y creadores
+- Tener control total sobre mi contenido
 
-## What You'll Find Here
+## Qué Encontrarás Aquí
 
-This site will be home to my writing on:
+Este sitio será el hogar de mis escritos sobre:
 
-- **Programming**: Tips, tutorials, and lessons learned
-- **Open Source**: Projects I'm working on and contributing to
-- **Technology**: Thoughts on emerging tech and industry trends
-- **Tools**: Reviews and recommendations for developer tools
+- **Programación**: Consejos, tutoriales y lecciones aprendidas
+- **Código Abierto**: Proyectos en los que trabajo y contribuyo
+- **Tecnología**: Pensamientos sobre tecnologías emergentes y tendencias de la industria
+- **Herramientas**: Reseñas y recomendaciones de herramientas para desarrolladores
 
-## Built With
+## Construido Con
 
-This site is built with Next.js, TypeScript, and Tailwind CSS. It's hosted on Replit and the source code is available on GitHub. I chose these tools for their simplicity and developer experience.
+Este sitio está construido con Next.js, TypeScript y Tailwind CSS. Está alojado en Replit y el código fuente está disponible en GitHub. Elegí estas herramientas por su simplicidad y experiencia de desarrollo.
 
-## Stay Connected
+## Mantente Conectado
 
-If you'd like to follow along with my journey, you can find me on [GitHub](https://github.com/luchotourn), [Twitter](https://twitter.com/luchotourn), or [LinkedIn](https://linkedin.com/in/luchotourn).
+Si te gustaría seguir mi viaje, puedes encontrarme en [GitHub](https://github.com/luchotourn) o [LinkedIn](https://linkedin.com/in/luchotourn).
 
-Thanks for stopping by!
+¡Gracias por pasar por aquí!

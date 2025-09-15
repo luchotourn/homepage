@@ -1,36 +1,104 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Personal Homepage
 
-## Getting Started
+A minimalist personal website built with Next.js, TypeScript, and Tailwind CSS.
 
-First, run the development server:
+## 🚀 Quick Start
 
 ```bash
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Visit `http://localhost:3005` to see your site.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## ✏️ How to Edit Content
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+### 1. Personal Information (Name & Description)
 
-## Learn More
+Edit the file **`content/about.md`**:
 
-To learn more about Next.js, take a look at the following resources:
+```markdown
+---
+name: Your Name
+---
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Your description here. You can use [markdown links](https://example.com) and they will automatically be styled consistently.
+```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+**Example:**
+```markdown
+---
+name: Luciano Tourn
+---
 
-## Deploy on Vercel
+Emprendedor de la salud. Co-fundador en [Wúru](https://www.wuru.ai/) y Director en Grupo Gamma
+```
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+### 2. Blog Posts
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Add new posts in the **`posts/`** folder as `.md` files:
+
+```markdown
+---
+title: "Post Title"
+date: "2024-01-25"
+excerpt: "Brief description"
+tags: ["tag1", "tag2"]
+---
+
+# Post Title
+
+Your post content here...
+```
+
+### 3. Contact Links
+
+Edit **`src/app/page.tsx`** (lines 51-72):
+
+- Email: Line 52 → `href="mailto:your.email@example.com"`
+- GitHub: Line 58 → `href="https://github.com/yourusername"`
+- LinkedIn: Line 65 → `href="https://www.linkedin.com/in/yourprofile/"`
+
+## 📁 Project Structure
+
+```
+homepage/
+├── content/
+│   └── about.md          # Your name and description
+├── posts/
+│   ├── post1.md          # Blog posts
+│   └── post2.md
+├── src/
+│   ├── app/
+│   │   └── page.tsx      # Homepage (contact links)
+│   └── lib/
+│       ├── about.ts      # Processes about.md
+│       └── blog.ts       # Processes blog posts
+└── README.md             # This file
+```
+
+## 🎨 Features
+
+- **Minimalist Design**: Clean, typography-focused layout
+- **Markdown Support**: Write content in markdown
+- **Consistent Styling**: All links automatically styled the same
+- **Blog System**: Built-in blog with markdown posts
+- **Fast Loading**: Static site generation for optimal performance
+
+## 🚀 Deployment
+
+### Deploy to Vercel (Recommended)
+
+1. Push to GitHub
+2. Import project on [Vercel](https://vercel.com)
+3. Deploy with one click
+
+### Deploy to Replit
+
+1. Import GitHub repository
+2. Configure custom domain
+3. Run deployment command
+
+## 📝 License
+
+MIT License - feel free to use this for your own homepage!

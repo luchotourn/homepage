@@ -1,27 +1,27 @@
 ---
-title: "Getting Started with Next.js in 2024"
+title: "Comenzando con Next.js en 2024"
 date: "2024-01-20"
-excerpt: "A comprehensive guide to building modern web applications with Next.js, covering the latest features and best practices."
+excerpt: "Una guía completa para construir aplicaciones web modernas con Next.js, cubriendo las últimas características y mejores prácticas."
 tags: ["nextjs", "react", "tutorial"]
 ---
 
-# Getting Started with Next.js in 2024
+# Comenzando con Next.js en 2024
 
-Next.js has become one of the most popular React frameworks, and for good reason. It provides an excellent developer experience while delivering great performance for users.
+Next.js se ha convertido en uno de los frameworks de React más populares, y por buenas razones. Proporciona una excelente experiencia de desarrollo mientras ofrece gran rendimiento para los usuarios.
 
-## Why Choose Next.js?
+## ¿Por Qué Elegir Next.js?
 
-Next.js offers several key advantages:
+Next.js ofrece varias ventajas clave:
 
-1. **Server-Side Rendering (SSR)** - Better SEO and initial page load times
-2. **Static Site Generation (SSG)** - Pre-generate pages at build time
-3. **API Routes** - Build full-stack applications
-4. **File-based Routing** - No need to configure routes manually
-5. **Built-in Optimization** - Image optimization, code splitting, and more
+1. **Renderizado del Lado del Servidor (SSR)** - Mejor SEO y tiempos de carga inicial
+2. **Generación de Sitios Estáticos (SSG)** - Pre-generar páginas en tiempo de construcción
+3. **Rutas de API** - Construir aplicaciones full-stack
+4. **Enrutamiento Basado en Archivos** - No necesidad de configurar rutas manualmente
+5. **Optimización Incorporada** - Optimización de imágenes, división de código, y más
 
-## Setting Up Your First Project
+## Configurando Tu Primer Proyecto
 
-Getting started is simple:
+Comenzar es simple:
 
 ```bash
 npx create-next-app@latest my-app
@@ -29,18 +29,18 @@ cd my-app
 npm run dev
 ```
 
-This creates a new Next.js project with all the modern tooling configured.
+Esto crea un nuevo proyecto Next.js con todas las herramientas modernas configuradas.
 
-## Key Features to Know
+## Características Clave que Debes Conocer
 
 ### App Router
-The new App Router (stable in Next.js 13+) provides:
-- Layouts and nested routing
-- Server and client components
-- Improved data fetching patterns
+El nuevo App Router (estable en Next.js 13+) proporciona:
+- Layouts y enrutamiento anidado
+- Componentes de servidor y cliente
+- Patrones mejorados de obtención de datos
 
-### Image Optimization
-Next.js automatically optimizes images:
+### Optimización de Imágenes
+Next.js optimiza automáticamente las imágenes:
 
 ```jsx
 import Image from 'next/image'
@@ -49,7 +49,7 @@ export default function MyImage() {
   return (
     <Image
       src="/my-image.jpg"
-      alt="Description"
+      alt="Descripción"
       width={500}
       height={300}
     />
@@ -57,15 +57,15 @@ export default function MyImage() {
 }
 ```
 
-## Best Practices
+## Mejores Prácticas
 
-1. **Use TypeScript** - Better developer experience and fewer bugs
-2. **Optimize Images** - Always use the Next.js Image component
-3. **Choose the Right Rendering Method** - SSG for static content, SSR for dynamic
-4. **Implement Proper SEO** - Use metadata API for better search rankings
+1. **Usar TypeScript** - Mejor experiencia de desarrollo y menos errores
+2. **Optimizar Imágenes** - Siempre usar el componente Image de Next.js
+3. **Elegir el Método de Renderizado Correcto** - SSG para contenido estático, SSR para dinámico
+4. **Implementar SEO Adecuado** - Usar la API de metadatos para mejores rankings de búsqueda
 
-## Conclusion
+## Conclusión
 
-Next.js provides an excellent foundation for modern web applications. Its combination of performance, developer experience, and flexibility makes it a great choice for projects of any size.
+Next.js proporciona una excelente base para aplicaciones web modernas. Su combinación de rendimiento, experiencia de desarrollo y flexibilidad lo convierte en una gran elección para proyectos de cualquier tamaño.
 
-Happy coding!
+¡Feliz programación!

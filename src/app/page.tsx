@@ -1,98 +1,80 @@
-import Link from "next/link";
 import { getPosts } from "@/lib/blog";
+import { getAboutInfo } from "@/lib/about";
 
-export default function Home() {
-  const posts = getPosts().slice(0, 5); // Show 5 most recent posts
+export default async function Home() {
+  const posts = getPosts();
+  const aboutInfo = await getAboutInfo();
 
   return (
-    <div className="max-w-2xl mx-auto px-6 py-16">
+    <div className="max-w-4xl mx-auto px-10 sm:px-24 py-24">
       {/* Header */}
-      <header className="mb-16">
-        <h1 className="text-2xl font-medium mb-6">Lucho Tourn</h1>
-        <p className="text-gray-600 leading-relaxed mb-8">
-          Developer and technology enthusiast. I write about programming,
-          open source software, and digital tools that make life better.
-        </p>
-        <nav className="space-x-6 text-sm">
-          <Link href="/about" className="text-gray-600 hover:text-black transition-colors">
-            About
-          </Link>
-          <Link href="/blog" className="text-gray-600 hover:text-black transition-colors">
-            Blog
-          </Link>
-          <a
-            href="mailto:hello@luchotourn.com"
-            className="text-gray-600 hover:text-black transition-colors"
-          >
-            Contact
-          </a>
-        </nav>
-      </header>
+      <div className="mb-20">
+        <div style={{ color: 'rgba(0, 0, 0, 0.7)', fontWeight: 'bold', lineHeight: 1 }} className="mb-2">
+          {aboutInfo.name}
+        </div>
+        <div
+          style={{ color: 'rgba(0, 0, 0, 0.7)', lineHeight: 1 }}
+          dangerouslySetInnerHTML={{ __html: aboutInfo.descriptionHtml }}
+        />
+      </div>
 
-      {/* Recent Posts */}
-      <section>
-        <h2 className="text-lg font-medium mb-8">Recent Writing</h2>
-        <div className="space-y-6">
+      {/* Posts */}
+      <div className="mb-20">
+        <div style={{ color: 'rgba(0, 0, 0, 0.7)', fontWeight: 'bold', lineHeight: 1 }} className="mb-2">
+          Posts
+        </div>
+        <div className="space-y-1">
           {posts.map((post) => (
-            <article key={post.slug} className="group">
-              <Link href={`/blog/${post.slug}`}>
-                <div className="flex justify-between items-start">
-                  <div className="flex-1">
-                    <h3 className="text-black group-hover:text-gray-600 transition-colors mb-1">
-                      {post.title}
-                    </h3>
-                    <p className="text-gray-600 text-sm leading-relaxed">
-                      {post.excerpt}
-                    </p>
-                  </div>
-                  <time className="text-gray-400 text-sm ml-4 whitespace-nowrap">
-                    {post.date}
-                  </time>
-                </div>
-              </Link>
-            </article>
+            <div key={post.slug} className="pl-2">
+              <span style={{ color: 'rgba(0, 0, 0, 0.7)', lineHeight: 1 }}>◦ </span>
+              <a
+                href={`/blog/${post.slug}`}
+                className="homepage-link"
+                style={{ color: '#2563eb', opacity: 1, fontWeight: 'bold', textDecoration: 'underline', lineHeight: 1 }}
+              >
+                {post.title}
+              </a>
+            </div>
           ))}
         </div>
+      </div>
 
-        <div className="mt-8">
-          <Link
-            href="/blog"
-            className="text-gray-600 hover:text-black transition-colors text-sm"
+      {/* Contact */}
+      <div className="mb-20">
+        <div style={{ color: 'rgba(0, 0, 0, 0.7)', lineHeight: 1 }}>
+          <strong>Contacto</strong> —{' '}
+          <a
+            href="mailto:luciano.tourn@wuru.ai"
+            className="homepage-link"
+            style={{ color: '#2563eb', opacity: 1, fontWeight: 'bold', textDecoration: 'underline', lineHeight: 1 }}
           >
-            View all posts →
-          </Link>
-        </div>
-      </section>
-
-      {/* Links */}
-      <footer className="mt-16 pt-8 border-t border-gray-200">
-        <div className="flex space-x-6 text-sm">
+            Email
+          </a>, {' '}
           <a
             href="https://github.com/luchotourn"
             target="_blank"
             rel="noopener noreferrer"
-            className="text-gray-600 hover:text-black transition-colors"
+            className="homepage-link"
+            style={{ color: '#2563eb', opacity: 1, fontWeight: 'bold', textDecoration: 'underline', lineHeight: 1 }}
           >
             GitHub
-          </a>
+          </a>, {' '}
           <a
-            href="https://twitter.com/luchotourn"
+            href="https://www.linkedin.com/in/tourn/"
             target="_blank"
             rel="noopener noreferrer"
-            className="text-gray-600 hover:text-black transition-colors"
-          >
-            Twitter
-          </a>
-          <a
-            href="https://linkedin.com/in/luchotourn"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-gray-600 hover:text-black transition-colors"
+            className="homepage-link"
+            style={{ color: '#2563eb', opacity: 1, fontWeight: 'bold', textDecoration: 'underline', lineHeight: 1 }}
           >
             LinkedIn
-          </a>
+          </a>.
         </div>
-      </footer>
+      </div>
+
+      {/* Footer */}
+      <div style={{ color: 'rgba(0, 0, 0, 0.3)', lineHeight: 1 }}>
+        © 2025 Luciano Tourn.
+      </div>
     </div>
   );
 }
