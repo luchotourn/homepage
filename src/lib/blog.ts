@@ -15,16 +15,22 @@ export interface Post {
   tags?: string[];
 }
 
-export function getPosts(): Post[] {
-  // Create posts directory if it doesn't exist
+function getMarkdownFiles(): string[] {
   if (!fs.existsSync(postsDirectory)) {
-    fs.mkdirSync(postsDirectory, { recursive: true });
+    return [];
+  }
+  const fileNames = fs.readdirSync(postsDirectory);
+  return fileNames.filter((name) => name.endsWith('.md'));
+}
+
+export function getPosts(): Post[] {
+  const markdownFiles = getMarkdownFiles();
+  
+  if (markdownFiles.length === 0) {
     return [];
   }
 
-  const fileNames = fs.readdirSync(postsDirectory);
-  const allPosts = fileNames
-    .filter((name) => name.endsWith('.md'))
+  const allPosts = markdownFiles
     .map((name) => {
       const slug = name.replace(/\.md$/, '');
       const fullPath = path.join(postsDirectory, name);
@@ -66,12 +72,6 @@ export async function getPost(slug: string): Promise<Post | null> {
 }
 
 export function getAllPostSlugs(): string[] {
-  if (!fs.existsSync(postsDirectory)) {
-    return [];
-  }
-
-  const fileNames = fs.readdirSync(postsDirectory);
-  return fileNames
-    .filter((name) => name.endsWith('.md'))
-    .map((name) => name.replace(/\.md$/, ''));
+  const markdownFiles = getMarkdownFiles();
+  return markdownFiles.map((name) => name.replace(/\.md$/, ''));
 }
