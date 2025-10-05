@@ -1,4 +1,4 @@
-# Personal Homepage
+# Personal Homepage 🏠
 
 A minimalist personal website built with Next.js, TypeScript, and Tailwind CSS.
 
