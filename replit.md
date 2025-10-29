@@ -9,10 +9,10 @@ This is a Next.js 15 blog/homepage application migrated from Vercel to Replit. T
 
 ### Migration from Vercel to Replit (October 29, 2025)
 - Configured Next.js to bind to port 5000 and host 0.0.0.0 for Replit compatibility
-- Disabled Turbopack due to symlink incompatibility with Replit environment
-- Added `allowedDevOrigins` configuration for Replit's cross-origin requests
+- Removed Turbopack from dev and build scripts (Next.js defaults to webpack which works correctly on Replit)
 - Set up deployment configuration using autoscale deployment target
 - Installed all dependencies via npm
+- Server running successfully with GET / 200 responses
 
 ## Project Architecture
 
@@ -49,8 +49,8 @@ The project runs on port 5000 with host binding to 0.0.0.0 to work within Replit
 - **Run:** `npm run start`
 
 ### Important Notes
-- Turbopack is disabled due to Replit's symlink structure
-- Cross-origin requests are allowed from *.replit.dev domains
+- Turbopack is disabled (Next.js uses webpack by default)
+- A harmless cross-origin warning may appear in dev logs (Next.js informational message about future versions)
 - No environment variables or API keys are currently required
 
 ## User Preferences
