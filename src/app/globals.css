@@ -26,6 +26,27 @@ body {
   opacity: 1 !important;
 }
 
+/* About section prose styles */
+.prose-about p {
+  margin-bottom: 1rem;
+  line-height: 1.6;
+}
+
+.prose-about p:last-child {
+  margin-bottom: 0;
+}
+
+.prose-about a {
+  color: #2563eb;
+  font-weight: bold;
+  text-decoration: underline;
+  transition: all 0.2s;
+}
+
+.prose-about a:hover {
+  color: #60a5fa;
+}
+
 /* Blog post prose styles */
 .prose {
   color: #374151;

@@ -20,9 +20,6 @@ export async function getAboutInfo(): Promise<AboutInfo> {
     const processedContent = await remark().use(html).process(content);
     let descriptionHtml = processedContent.toString();
 
-    // Replace all <p> tags to maintain inline display
-    descriptionHtml = descriptionHtml.replace(/<\/?p>/g, '');
-
     // Apply consistent link styling to all <a> tags
     descriptionHtml = descriptionHtml.replace(
       /<a[^>]*href="([^"]*)"[^>]*>([^<]*)<\/a>/g,
