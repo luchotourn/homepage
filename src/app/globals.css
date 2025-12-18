@@ -97,15 +97,15 @@ body {
 }
 
 .prose a {
-  color: #374151;
+  color: #2563eb;
+  font-weight: bold;
   text-decoration: underline;
-  text-decoration-color: #d1d5db;
+  line-height: 1;
   transition: all 0.2s;
 }
 
 .prose a:hover {
-  color: #111827;
-  text-decoration-color: #374151;
+  color: #60a5fa;
 }
 
 .prose blockquote {
