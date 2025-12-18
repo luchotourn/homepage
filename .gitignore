@@ -39,3 +39,10 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# WordPress backups and deployments
+Blog-lucianotourn.com/
+wordpress-minimal/
+replit-wordpress-deploy/
+prepare-minimal-wordpress.sh
+QUICK-DEPLOY.md
