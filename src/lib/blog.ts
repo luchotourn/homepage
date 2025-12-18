@@ -10,9 +10,14 @@ export interface Post {
   slug: string;
   title: string;
   date: string;
-  excerpt: string;
+  excerpt?: string;
   content?: string;
   tags?: string[];
+}
+
+function extractTitleFromContent(content: string): string {
+  const h1Match = content.match(/^#\s+(.+)$/m);
+  return h1Match ? h1Match[1].trim() : '';
 }
 
 function getMarkdownFiles(): string[] {
@@ -25,7 +30,7 @@ function getMarkdownFiles(): string[] {
 
 export function getPosts(): Post[] {
   const markdownFiles = getMarkdownFiles();
-  
+
   if (markdownFiles.length === 0) {
     return [];
   }
@@ -35,13 +40,15 @@ export function getPosts(): Post[] {
       const slug = name.replace(/\.md$/, '');
       const fullPath = path.join(postsDirectory, name);
       const fileContents = fs.readFileSync(fullPath, 'utf8');
-      const { data } = matter(fileContents);
+      const { data, content } = matter(fileContents);
+
+      const title = data.title || extractTitleFromContent(content) || slug;
 
       return {
         slug,
-        title: data.title || slug,
+        title,
         date: data.date || new Date().toISOString().split('T')[0],
-        excerpt: data.excerpt || '',
+        excerpt: data.excerpt,
         tags: data.tags || [],
       } as Post;
     });
@@ -58,11 +65,13 @@ export async function getPost(slug: string): Promise<Post | null> {
     const processedContent = await remark().use(html).process(content);
     const contentHtml = processedContent.toString();
 
+    const title = data.title || extractTitleFromContent(content) || slug;
+
     return {
       slug,
-      title: data.title || slug,
+      title,
       date: data.date || new Date().toISOString().split('T')[0],
-      excerpt: data.excerpt || '',
+      excerpt: data.excerpt,
       tags: data.tags || [],
       content: contentHtml,
     };

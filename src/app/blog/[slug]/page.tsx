@@ -23,9 +23,6 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
       </div>
 
       <div className="mb-8">
-        <div className="text-black opacity-70 leading-relaxed">
-          <strong>{post.title}</strong>
-        </div>
         <div className="text-black opacity-30 leading-relaxed">
           {post.date}
         </div>
