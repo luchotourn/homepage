@@ -13,7 +13,8 @@ export default async function Home() {
           {aboutInfo.name}
         </div>
         <div
-          style={{ color: 'rgba(0, 0, 0, 0.7)', lineHeight: 1 }}
+          className="prose-about"
+          style={{ color: 'rgba(0, 0, 0, 0.7)' }}
           dangerouslySetInnerHTML={{ __html: aboutInfo.descriptionHtml }}
         />
       </div>
