@@ -7,18 +7,6 @@ export default async function Home() {
 
   return (
     <div className="max-w-4xl mx-auto px-10 sm:px-24 py-24">
-      {/* Header */}
-      <div className="mb-20">
-        <div style={{ color: 'rgba(0, 0, 0, 0.7)', fontWeight: 'bold', lineHeight: 1 }} className="mb-2">
-          {aboutInfo.name}
-        </div>
-        <div
-          className="prose-about"
-          style={{ color: 'rgba(0, 0, 0, 0.7)' }}
-          dangerouslySetInnerHTML={{ __html: aboutInfo.descriptionHtml }}
-        />
-      </div>
-
       {/* Posts */}
       <div className="mb-20">
         <div style={{ color: 'rgba(0, 0, 0, 0.7)', fontWeight: 'bold', lineHeight: 1 }} className="mb-2">
@@ -38,6 +26,18 @@ export default async function Home() {
             </div>
           ))}
         </div>
+      </div>
+
+      {/* Profile */}
+      <div className="mb-20">
+        <div style={{ color: 'rgba(0, 0, 0, 0.7)', fontWeight: 'bold', lineHeight: 1 }} className="mb-2">
+          {aboutInfo.name}
+        </div>
+        <div
+          className="prose-about"
+          style={{ color: 'rgba(0, 0, 0, 0.7)' }}
+          dangerouslySetInnerHTML={{ __html: aboutInfo.descriptionHtml }}
+        />
       </div>
 
       {/* Contact */}
