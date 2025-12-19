@@ -7,11 +7,9 @@ tags: ["LLM Native", "Wúru", "Tiny teams"]
 
 La gran innovación del 2025 es para mi fue la nueva forma de organizar el workflow del software para aprovechar al máximo la potencia que dan los LLMs. 
 
-Hay dos principios fundametales: 
+Hay dos principios fundamentales:
 
-![Principios LLM Native](https://tourn.lu/images/principios_llmnative.png)
-
-
+![Workflows Sum](https://tourn.lu/images/workflows_sum.png)
 
 ## Links relacionados
 
