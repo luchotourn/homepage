@@ -1,5 +1,6 @@
 import { getPosts } from "@/lib/blog";
 import { getAboutInfo } from "@/lib/about";
+import { format, parseISO } from "date-fns";
 
 export default async function Home() {
   const posts = getPosts();
@@ -9,17 +10,20 @@ export default async function Home() {
     <div className="max-w-4xl mx-auto px-10 sm:px-24 py-24">
       {/* Posts */}
       <div className="mb-20">
-        <div style={{ color: 'rgba(0, 0, 0, 0.7)', fontWeight: 'bold', lineHeight: 1 }} className="mb-2">
+        <div style={{ color: 'rgba(0, 0, 0, 0.7)', fontWeight: 'bold', lineHeight: 1 }} className="mb-4">
           Posts
         </div>
-        <div className="space-y-1">
+        <div className="space-y-2">
           {posts.map((post) => (
-            <div key={post.slug} className="pl-2">
-              <span style={{ color: 'rgba(0, 0, 0, 0.7)', lineHeight: 1 }}>◦ </span>
+            <div key={post.slug} style={{ lineHeight: 1.4 }}>
+              <span style={{ color: 'rgba(0, 0, 0, 0.4)' }}>
+                {format(parseISO(post.date), "dd MMM, yyyy")}
+              </span>
+              {" "}
               <a
                 href={`/blog/${post.slug}`}
                 className="homepage-link"
-                style={{ color: '#2563eb', opacity: 1, fontWeight: 'bold', textDecoration: 'underline', lineHeight: 1 }}
+                style={{ color: '#2563eb', fontWeight: 'bold', textDecoration: 'underline' }}
               >
                 {post.title}
               </a>
