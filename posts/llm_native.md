@@ -5,7 +5,7 @@ tags: ["LLM Native", "Wúru", "Tiny teams"]
 
 # LLM Native, Tiny Teams
 
-La gran innovación del 2025 es para mi fue la nueva forma de organizar el trabajo para aprovechar al máximo la potencia que dan los LLMs. A la delantera, mostrando como es el futuro, van los workflows de empresas de software (1), pero no tengo dudas que todas las profesiones van a ser revolucionadas. En lo personal, es un tema que siempre me interesó, en la universidad estudié ingeniería industrial porque quise entender siempre como organizar mejor los procesos y la productividad de las personas. Hace un siglo fue la revolución de la linea de montaje, ahora es como embeber LLMs para complementar al humano en esta era de la economía del conocimiento.
+La gran innovación del 2025 es para mi fue la nueva forma de organizar el trabajo para aprovechar al máximo la potencia que dan los LLMs. A la delantera, mostrando como es el futuro, van los workflows de empresas de software [^1], pero no tengo dudas que todas las profesiones van a ser revolucionadas. En lo personal, es un tema que siempre me interesó, en la universidad estudié ingeniería industrial porque quise entender siempre como organizar mejor los procesos y la productividad de las personas. Hace un siglo fue la revolución de la linea de montaje, ahora es como embeber LLMs para complementar al humano en esta era de la economía del conocimiento.
 
 Descompongamos un poco las ideas. Primero, una compañia es una organización colectiva de personas para lograr un objetivo que sería imposible conseguir de forma individual. Alcanzar este objetivo implica orquestar una sumatoria de flujos de trabajo:
 
@@ -21,10 +21,10 @@ Hay dos principios que yo considero fundamentales para guiar a una organización
 
 
 
-**1- Nadie debería hacer a mano lo que se puede hacer con AI / LLMs.**
+**1. Nadie debería hacer a mano lo que se puede hacer con AI / LLMs.**
 Quien me influenció al respecto es Francisco Ingham, el autor de [este manifesto LLM Native](https://llmnative.dev/manifesto) y quién ademas coorganiza [esta comunidad](https://discord.gg/dmgG2wkhSu) en Discord para discutir y profundizar las ideas de la automatización con LLMs.
 
-**2- Cada unidad de trabajo (o product feature) debería hacer más fácil de producir la siguiente unidad**
+**2. Cada unidad de trabajo (o product feature) debería hacer más fácil de producir la siguiente unidad**
 Acá la startup pionera es Every y su fundador Dan Shipper. La idea es que tradicionalmente en el software cuando uno agrega features al producto la complejidad de la ingenería aumenta, y por lo tanto cada vez es más dificil mantenerlos y sumar nuevos. Con LLMs es posible revertir esta compejidad: a medida que uno trabaja, va creando y "destilando" componentes reusables - que pueden pensarse como la suma de contexto, procesos operativos estandarizados, habilidades codificadas y tools, que una vez construidas (como un skill en claude code por ejemplo) pueden desplegarse por cualquier miembro del equipo. Así el trabajo futuro se simplifica.
 
 
@@ -33,9 +33,4 @@ La aplicación de estos principios no es absoluta sino direccional. No hay una r
 
 
 
-(1) Hay buenas razones por las que el software es particularmente bueno para automatizar con LLMs: la verificabilidad, la cantidad de data publica, y obviamente que los propios labs como Anthropic o OpenAI la iteran todos los días en sus equipos de ingeniería.
-
-
-
-
-
+[^1]: Hay buenas razones por las que el software es particularmente bueno para automatizar con LLMs: la verificabilidad, la cantidad de data publica, y obviamente que los propios labs como Anthropic o OpenAI la iteran todos los días en sus equipos de ingeniería.
