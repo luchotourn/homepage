@@ -1,9 +1,24 @@
 import Link from "next/link";
 import { notFound } from "next/navigation";
+import { Metadata } from "next";
 import { getPost, getAllPostSlugs } from "@/lib/blog";
 
 interface BlogPostPageProps {
   params: Promise<{ slug: string }>;
+}
+
+export async function generateMetadata({ params }: BlogPostPageProps): Promise<Metadata> {
+  const { slug } = await params;
+  const post = await getPost(slug);
+
+  if (!post) {
+    return { title: 'Post not found' };
+  }
+
+  return {
+    title: `${post.title} | Luciano Tourn`,
+    description: post.excerpt || `${post.title} - Blog post by Luciano Tourn`,
+  };
 }
 
 export default async function BlogPostPage({ params }: BlogPostPageProps) {
