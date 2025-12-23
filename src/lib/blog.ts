@@ -63,8 +63,9 @@ export async function getPost(slug: string): Promise<Post | null> {
     const fileContents = fs.readFileSync(fullPath, 'utf8');
     const { data, content } = matter(fileContents);
 
-    const processedContent = await remark().use(gfm).use(html, { sanitize: false }).process(content);
-    const contentHtml = processedContent.toString();
+    const processedContent = await remark().use(gfm).use(html, { allowDangerousHtml: true }).process(content);
+    // Fix double-prefixed footnote IDs (user-content-user-content-fn -> user-content-fn)
+    const contentHtml = processedContent.toString().replace(/user-content-user-content-/g, 'user-content-');
 
     const title = data.title || extractTitleFromContent(content) || slug;
 
