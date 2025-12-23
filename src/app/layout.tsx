@@ -13,6 +13,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://tourn.lu"),
   title: "Luciano Tourn",
   description: "Personal homepage and repo",
 };
